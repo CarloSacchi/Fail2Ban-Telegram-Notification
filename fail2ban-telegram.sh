@@ -8,7 +8,9 @@
 # stop
 # ban
 # unban
-# Optional second argument: Ip for ban/unband
+# Optional second argument: Ip for ban/unban
+# Edited by CharlsBags
+# Fail2Ban version: v0.10.2
 
 
 # Display usage information
