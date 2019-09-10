@@ -220,8 +220,7 @@ filter  = sshd
 #logpath = %(sshd_log)s
 logpath = /var/log/auth.log
 maxretry = 5
-action  = iptables[name=SSH, port=22, protocol=tcp]
-	  telegram
+action = telegram
 
 [sshd-ddos]
 # This jail corresponds to the standard configuration in Fail2ban.
