@@ -35,7 +35,7 @@ Send notification to telegram when fail2ban ban an IP address and unband an IP a
  - Copy telegram.conf to `/etc/fail2ban/action.d/` directory  
  `cp telegram.conf /etc/fail2ban/action.d/`
  
- - Edit fail2ban-telegram.sh and replace the `apiToken` and `chatId` with your api. You must create telegram bot first and get the api key [here](https://www.sohamkamani.com/blog/2016/09/21/making-a-telegram-bot/)
+ - Edit fail2ban-telegram.sh and replace the `apiToken` and `chatId` with your api. You must create telegram bot first and get the api key [here](https://core.telegram.org/bots)
  
 ### Start the service  
 sudo systemctl start fail2ban
