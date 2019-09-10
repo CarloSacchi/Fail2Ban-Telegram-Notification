@@ -1,15 +1,16 @@
-# fail2ban-telegram-notification
+![Version](https://img.shields.io/badge/version-1.0.0-green.svg)
+![Buils](https://img.shields.io/badge/build-stable-green.svg)
+
+# Fail2ban Telegram Notification
 Send notification to telegram when fail2ban ban an IP address and unband an IP address
 
 ### Requirement
 - openssh
-- vsftpd 
-- fail2ban
-- curl
+- fail2ban version: v0.10.2
 - telegram bot api
 
 ### Installation
-`$ sudo apt install vsftpd fail2ban ssh-server`
+`$ sudo apt install fail2ban ssh-server`
 
 ### Configuration
 #### Fail2ban
@@ -19,22 +20,13 @@ Send notification to telegram when fail2ban ban an IP address and unband an IP a
    bantime = 3600  
    findtime = 120   
    maxretry = 3  
-  
-- Protect vsftpd with fail2ban. Make chage to [vsftpd] section in jail.local
-   enabled = true  
-   filter  = vsftpd  
-   action  =  
-   iptables[name=VSFTPD, port=21, protocol=tcp]  
-   telegram
    
  - If you want to protect SSH with fail2ban add this to [sshd]  
    enabled = true  
    filter  = sshd   
    maxretry = 3  
    logpath = /var/log/auth.log  
-   action  =  
-   iptables[name=SSH, port=22, protocol=tcp]  
-   telegram 
+   action  =  telegram 
    
  - Make script directory to place our shell script  
  `sudo mkdir /etc/fail2ban/scripts/`  
@@ -47,7 +39,6 @@ Send notification to telegram when fail2ban ban an IP address and unband an IP a
  
 ### Start the service  
 systemctl start ssh-server  
-systemctl start vsftpd  
 systemctl start fail2ban
 
 ### Demo video
